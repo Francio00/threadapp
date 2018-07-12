@@ -1,0 +1,15 @@
+{% extends 'topic/base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+    <div>
+        {% if topic.published_date %}
+            <div>
+                {{ topic.published_date }}
+            </div>
+        {% endif %}
+        <a href="{% url 'topic_new' %}" ><img class="btn" src="{% static 'css/add_btn.png' %}"></a>
+        <h1>{{ topic.title }}</h1>
+        <p>{{ topic.text|linebreaksbr }}</p>
+    </div>
+{% endblock %}

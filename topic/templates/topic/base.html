@@ -1,0 +1,63 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="IT">
+<head>
+<title> Nome del sito</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="{% static 'css/page.css' %}">
+</head>
+<body>
+
+<div class="header">  <!--forse sarebbe meglio mettere tutto in una grafica e caricare un'immagine qui invece di un testo, chissà -->
+  <h1 class="title"><a class="titolo" href="/">My Website</a> </h1>
+  <p>Breve frase/slogan ad effetto.</p>
+</div>
+
+<div class="navbar">
+  <a href="#">New</a>
+  <a href="#">Hot</a>
+  <a href="#">Threads</a>
+  <a href="#" class="right">Login</a>
+</div>
+
+<div class="row">
+  <div class="side">
+      <h2>About this website</h2>
+      <h5>Photo of this website:</h5>
+      <div class="fakeimg" style="height:200px;">Image</div>
+      <p>Some text about the website (descrizione?)</p>
+      <h3>More Text</h3>
+      <p>Wow such text</p>
+      <div class="fakeimg" style="height:60px;">Ci metto delle immagini</div><br>
+      <div class="fakeimg" style="height:60px;">oppure</div><br>
+      <div class="fakeimg" style="height:60px;">Ci metto dei link qui?</div>
+  </div>
+  <div class="main">
+      <h2>Thread list</h2>
+      <h5>List of all the threads, last update : Jul 6, 2018</h5>
+      <div class="fakeimg" style="height:550px;">
+        {% block content %}
+        {% endblock %} 
+      </div>
+      <p>Update 1.0.0</p>
+      <p>Added some new test-topic </p>
+      <!-- <br>
+      <h2>ANOTHER FEATURE</h2>
+      <h5>This is not new, May 5, 2018</h5>
+      <div class="fakeimg" style="height:200px;">Tipo kitkat marshmellow oreo madonna come si scrivono i nomi inglesi dei dolciumi aiuto sono ignorante</div>
+      <p>Update 1.0.X</p>
+      <p>Another update description Donec augue metus, ultrices eget gravida ac, lacinia vel massa. Pellentesque tincidunt velit nec mi maximus, vitae tincidunt nisi bibendum. Integer eget porta dui.</p>-->
+  </div>
+</div>
+
+<div class="footer">
+  <h2>Footer</h2>
+  <h5>Wanna help? Send messages to the staff</h5>
+  <p>*Bottone con link per le lamentele e/o aiuti che devo ancora fare*</p>
+  <br>
+  <p>oppure creo un Thread per i consigli al sito e lo metto in evidenza? mhhhh</p>
+</div>
+
+</body>
+</html>
