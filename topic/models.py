@@ -15,3 +15,13 @@ class Topic(models.Model):
 
 	def __str__(self):
 		return self.title
+
+class Comments(models.Model):
+	"""docstring for ClassName"""
+	topic=models.ForeignKey('Topic',on_delete=models.CASCADE)
+	published_date = models.DateTimeField(default=timezone.now)
+	comment=models.TextField(blank=True,null=True)
+	author=models.CharField(max_length=50,blank=True,default="anonymous")
+
+	def __str__(self):
+		return str(self.published_date)+" "+self.author

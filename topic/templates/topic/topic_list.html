@@ -3,9 +3,9 @@
 {% block content %}
 {% for topic in topics %}
 	<!-- <div> -->
-	<p>published: {{ topic.published_date }}</p>
 	<h1><a class="topic" href="{% url 'topic_page' pk=topic.pk %}">{{ topic.title }}</a></h1>
-	<p>{{ topic.text|linebreaksbr }}</p>
+	<p>published: {{ topic.published_date }}</p>
+	<!-- <p>{{ topic.text|linebreaksbr }}</p> -->
 	<!-- </div> -->
 {% endfor %}
 {% endblock %}

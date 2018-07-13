@@ -12,4 +12,14 @@
         <h1>{{ topic.title }}</h1>
         <p>{{ topic.text|linebreaksbr }}</p>
     </div>
+    <div>
+        {% for comment in comment_list%}
+        <h6>{{ comment.author }}</h6>
+        <p>{{ comment.comment|linebreaksbr }}</p>
+        {% endfor %}
+    <form method="POST" >{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn_comment">Comment</button>
+    </form>
+    </div>
 {% endblock %}
