@@ -18,7 +18,7 @@ def topic_page(request, pk):
 		if form.is_valid():
 			comment = form.save(commit=False)
 			comment.topic = topic
-			comment.author = "authorless"
+			comment.author = "anonymous"
 			comment.published_date = timezone.now()
 			comment.save()
 			#return redirect('post_detail', pk=post.pk)

@@ -58,9 +58,33 @@ text-decoration: none;
 }
 
 .btn_comment{
-    width:50px;
-    height:50px;
-    clear: all;
+    background-color: #1ab188;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.btn_comment:hover{
+    background-color: #127b5f;
+}
+
+.btn_save{
+    background-color: #1ab188;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;    
+}
+
+.btn_save:hover{
+    background-color: #127b5f;
 }
 .topic{
 color:black;

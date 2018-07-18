@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<style>
+
+body {
+  background: #d4dce2;
+  font-family: 'Titillium Web', sans-serif;
+}
+
+h2 {
+  text-align: center;
+  color: #ffffff;
+  font-weight: 300;
+  margin :0 0 40px;
+}
+
+.btn{
+  border:0;
+  outline:none;
+  border-radius:0;
+  padding:15px 0;
+  font-size:2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing:.1em;
+  background:#1ab188;
+  color:#ffffff;
+  display:block;
+  width:100%;
+  transition-duration: 0.4s;
+  -webkit-transition-duration: 0.4s; /* per safari*/
+}
+.btn:hover{
+  background-color: #127b5f;
+}
+
+div{
+  background: #132a2f;
+  padding: 40px;
+  max-width:600px;
+  margin:40px auto;
+  border-radius:4px;
+  box-shadow:0 4px 10px 4px rgba(#13232f);
+}
+a{
+  color: #1ab188;
+}
+a:hover{
+  color: #127b5f;
+}
+</style>
+<body>
+<div>
+{% block content %}
+{% endblock %} 
+</div>
+</body>
+</html>
