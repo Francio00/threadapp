@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<div class="header">  <!--forse sarebbe meglio mettere tutto in una grafica e caricare un'immagine qui invece di un testo, chissà -->
+<div class="header">  
   <h1 class="title"><a class="titolo" href="/">My Website</a> </h1>
   <p>Breve frase/slogan ad effetto.</p>
 </div>
@@ -18,7 +18,12 @@
   <a href="#">New</a>
   <a href="#">Hot</a>
   <a href="#">Threads</a>
-  <a href="{% url 'login'  %}" class="right">Login</a>
+  {% if user.is_authenticated %}
+    <a class="right">Hi {{ user.username }}!</a>
+    <a href="{% url 'logout'  %}" class="right">Logout</a>
+  {% else %}
+    <a href="{% url 'login'  %}" class="right">Login</a>
+  {% endif %}
 </div>
 
 <div class="row">
@@ -36,6 +41,7 @@
   <div class="main">
       <h2>Thread list</h2>
       <h5>List of all the threads, last update : Jul 6, 2018</h5>
+      <a id="add_btn" href="{% url 'topic_new' %}" ><img class="btn" src="{% static 'css/add_btn.png' %}"></a>
       <div class="fakeimg" style="height:550px;">
         {% block content %}
         {% endblock %} 
