@@ -4,8 +4,8 @@
     <div class="topic_post">
         <h2 id="t_title">{{ topic.title }}</h2>
         <p id="t_text">{{ topic.text|linebreaksbr }}</p>
-        {% if topic.published_date %}
-            <p id="t_date"> {{ topic.published_date }} </p>
+        {% if topic.date %}
+            <p id="t_date"> {{ topic.date }} </p>
         {% endif %}
         <a href="{% url 'topic_edit' pk=topic.pk %}">Edit</a>
         <a href="{% url 'topic_delete' pk=topic.pk %}">Delete</a>
@@ -14,6 +14,7 @@
         {% for comment in comment_list%}
         <!--<h3 id="author">{{ comment.author }}</h3>-->
         <p id="t_text">{{ comment.comment|linebreaksbr }}</p>
+        <p>author: {{ comment.author }}</p>
         {% endfor %}
     </div>
     <div>

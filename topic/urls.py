@@ -6,7 +6,7 @@ from django.views.generic.base import TemplateView
 from . import views as topic_views
 urlpatterns = [
 	path('', views.topic_list.as_view(), name='topic_list'),	#lista topic
-	path('topic/new/', views.topic_new, name='topic_new'),	#nuovo topic
+	path('topic/new/', views.topic_new.as_view(), name='topic_new'),	#nuovo topic
 	path('topic/<int:pk>/', views.topic_page, name='topic_page'),	#dettagli di un topic
 	path('topic/<int:pk>/edit/', views.topic_edit.as_view(), name='topic_edit'),	#modifica topic
 	path('topic/<int:pk>/delete/', views.topic_delete.as_view(), name='topic_delete'), #cancellazione topic

@@ -15,7 +15,7 @@ class CommentForm(forms.ModelForm):
 	"""docstring for CommentForm"""
 	class Meta:
 		model=Comments
-		fields=('comment','author',)
+		fields=('comment',)
 
 class SignUpForm(UserCreationForm):
     first_name = forms.CharField(max_length=30, required=False, help_text='Optional.')
