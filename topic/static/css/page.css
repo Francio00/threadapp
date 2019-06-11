@@ -128,9 +128,11 @@ text-decoration: none;
 
 /* Fake image, just for this example */
 .fakeimg {
+    border-radius: 5px;
     background-color: #aaa;
     width: 100%;
     padding: 20px;
+    overflow: auto;
 }
 
 /* Footer */
@@ -159,17 +161,23 @@ text-decoration: none;
 
 
 .topic_post{
-    background-color: #ffffff;
     border-top: 100px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    background-color: #f2f2f2;
 }
 
 #t_text{
-    font-size:80%;
+    font-size:100%;
 }
 
 #t_title{
     font-weight:bold;
-    font-size:115%;
+    font-size:225%;
     font-family:Arial;
 }
 
@@ -179,5 +187,6 @@ text-decoration: none;
 }
 
 #author{
-    font-size:90%;
+    font-size:75%;
+    font-weight:initial;
 }

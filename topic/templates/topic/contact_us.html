@@ -14,6 +14,16 @@ h2 {
   margin :0 0 40px;
 }
 
+div{
+  background: #132a2f;
+  padding: 40px;
+  max-width:600px;
+  margin:40px auto;
+  border-radius:4px;
+  box-shadow:0 4px 10px 4px rgba(#13232f);
+  overflow: auto;
+}
+
 .btn{
   border:0;
   outline:none;
@@ -34,33 +44,17 @@ h2 {
   background-color: #127b5f;
 }
 
-div{
-  background: #132a2f;
-  padding: 40px;
-  max-width:600px;
-  margin:40px auto;
-  border-radius:4px;
-  box-shadow:0 4px 10px 4px rgba(#13232f);
-  overflow: auto;
-}
-#help_text{
-  padding: 0px;
-  margin:0px auto;
-  border-radius:0px;
-}
-
-a{
-  color: #1ab188;
-}
-a:hover{
-  color: #127b5f;
-}
 </style>
 
 <body>
-<div>
-{% block content %}
-{% endblock %} 
-</div>
+	<div>
+		<h2>Contact Us</h2>
+		<form method="post">
+		    {% csrf_token %}
+		    <strong style="color: white">{{ form.as_p }}</strong>
+			<button type="submit" class="btn">Send</button>
+		</form>
+	</div>
 </body>
 </html>
+</form>

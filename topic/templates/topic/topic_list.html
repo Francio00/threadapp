@@ -2,11 +2,12 @@
 
 {% block content %}
 {% for topic in object_list %}
-	<!-- <div> -->
-	<h1><a class="topic" href="{% url 'topic_page' pk=topic.pk %}">{{ topic.title }}</a></h1>
-	<p>published: {{ topic.date }}</p>
-	<p>author: {{ topic.author }}</p>
-	<!-- <p>{{ topic.text|linebreaksbr }}</p> -->
-	<!-- </div> -->
+<a style="display:block" class="topic" href="{% url 'topic_page' pk=topic.pk %}" >
+	<div class="topic_post" >
+		<h1>{{ topic.title }}</h1>
+		<p style="font-size:80%;">published: {{ topic.date }}</p>
+		<p style="font-size:80%;">author: {{ topic.author }}</p>
+	</div>
+</a>
 {% endfor %}
 {% endblock %}

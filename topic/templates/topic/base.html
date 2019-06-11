@@ -17,14 +17,17 @@
 <div class="navbar">
   <a href="#">New</a>
   <a href="#">Hot</a>
-  <a href="#">Threads</a>
+  <a href="#">Topics</a>
   {% if user.is_authenticated %}
-    <a class="right">Hi {{ user.username }}!</a>
+    <a class="right" href="#">Hi {{ user.username }}!</a>
     <a href="{% url 'logout'  %}" class="right">Logout</a>
   {% else %}
     <a href="{% url 'login'  %}" class="right">Login</a>
   {% endif %}
 </div>
+
+<!--
+DA RIMETTERE SE VOGLIO IMPLEMENTARE NOTIZIE LATERALI
 
 <div class="row">
   <div class="side">
@@ -38,17 +41,19 @@
       <div class="fakeimg" style="height:60px;">oppure</div><br>
       <div class="fakeimg" style="height:60px;">Ci metto dei link qui?</div>
   </div>
+-->
   <div class="main">
-      <h2>Thread list</h2>
-      <h5>List of all the threads, last update : Jul 6, 2018</h5>
+      <h2>Topic list</h2>
+      <h5>List of all the topics</h5>
       <a id="add_btn" href="{% url 'topic_new' %}" ><img class="btn" src="{% static 'css/add_btn.png' %}"></a>
       <div class="fakeimg" style="height:550px;">
         {% block content %}
         {% endblock %} 
       </div>
+      <!--
       <p>Update 1.0.0</p>
       <p>Added some new test-topic </p>
-      <!-- <br>
+      <br>
       <h2>ANOTHER FEATURE</h2>
       <h5>This is not new, May 5, 2018</h5>
       <div class="fakeimg" style="height:200px;">Tipo kitkat marshmellow oreo madonna come si scrivono i nomi inglesi dei dolciumi aiuto sono ignorante</div>
@@ -58,11 +63,8 @@
 </div>
 
 <div class="footer">
-  <h2>Footer</h2>
   <h5>Wanna help? Send messages to the staff</h5>
-  <p>*Bottone con link per le lamentele e/o aiuti che devo ancora fare*</p>
-  <br>
-  <p>oppure creo un Thread per i consigli al sito e lo metto in evidenza? mhhhh</p>
+  <a href="{% url 'contact_us' %}" class="btn_save">Contact Us</a>
 </div>
 
 </body>

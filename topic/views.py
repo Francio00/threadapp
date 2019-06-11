@@ -7,6 +7,9 @@ from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.urls  import reverse_lazy
 from django.views.generic.edit import DeleteView,UpdateView,CreateView
 from django.views.generic import ListView
+from django.core.mail import send_mail, BadHeaderError
+from django.http import HttpResponse, HttpResponseRedirect
+from .forms import ContactForm
 
 #from django.contrib.auth.forms import UserCreationForm
 
@@ -84,7 +87,24 @@ class topic_delete(LoginRequiredMixin, DeleteView, UserPassesTestMixin):
 		else:
 			raise Http404
 		
+def emailView(request):
+    if request.method == 'GET':
+        form = ContactForm()
+    else:
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            subject = form.cleaned_data['subject']
+            from_email = form.cleaned_data['from_email']
+            message = form.cleaned_data['message']
+            try:
+                send_mail(subject, message, from_email, ['francioli.andrea@itsmarchiforti.gov.it'])
+            except BadHeaderError:
+                return HttpResponse('Invalid header found.')
+            return redirect('success')
+    return render(request, "contact_us.html", {'form': form})
 
+def successView(request):
+    return HttpResponse('Success! Thank you for your message.')
 
 #def signup(request):
 #	if request.method == 'POST':

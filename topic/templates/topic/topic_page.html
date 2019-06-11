@@ -7,16 +7,19 @@
         {% if topic.date %}
             <p id="t_date"> {{ topic.date }} </p>
         {% endif %}
-        <a href="{% url 'topic_edit' pk=topic.pk %}">Edit</a>
-        <a href="{% url 'topic_delete' pk=topic.pk %}">Delete</a>
+        <p id="author" ;>author: {{ topic.author }}</p>
+        <a class="btn_comment" href="{% url 'topic_edit' pk=topic.pk %}">Edit</a>
+        <a class="btn_comment" href="{% url 'topic_delete' pk=topic.pk %}">Delete</a>
     </div>
-    <div>
-        {% for comment in comment_list%}
-        <!--<h3 id="author">{{ comment.author }}</h3>-->
-        <p id="t_text">{{ comment.comment|linebreaksbr }}</p>
-        <p>author: {{ comment.author }}</p>
-        {% endfor %}
-    </div>
+    {% for comment in comment_list%}
+        <div class="topic_post">
+            <p id="t_text">{{ comment.comment|linebreaksbr }}</p>
+            {% if comment.published_date %}
+                <p id="t_date"> {{ comment.published_date }} </p>
+            {% endif %}
+            <p id="author";>author: {{ comment.author }}</p>
+        </div>
+    {% endfor %}
     <div>
     <form method="POST" >{% csrf_token %}
         {{ form.as_p }}
